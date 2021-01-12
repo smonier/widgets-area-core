@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+    <description> </description>
+    <display-name> </display-name>
+    <tlib-version>1.0</tlib-version>
+    <short-name>widgetLib</short-name>
+    <uri>http://www.jahia.org/tags/widget</uri>
+    <function>
+        <description>Test if the node has a specific view</description>
+        <name>hasNoDefaultScriptView</name>
+        <function-class>org.jahia.modules.widget.taglibs.Functions</function-class>
+        <function-signature>java.lang.Boolean
+            hasNoDefaultScriptView(org.jahia.services.content.JCRNodeWrapper,java.lang.String,org.jahia.services.render.RenderContext)</function-signature>
+        <example>${functions:hasNoDefaultScriptView(node,"basic",renderContext)}</example>
+    </function>
+    <function>
+        <description>Return Publication Status</description>
+        <name>getVisibilityStatus</name>
+        <function-class>org.jahia.modules.widget.taglibs.Functions</function-class>
+        <function-signature>int getVisibilityStatus(org.jahia.services.content.JCRNodeWrapper,org.jahia.services.content.JCRSessionWrapper,java.lang.String,java.lang.String)</function-signature>
+        <example>${functions:getVisibilityStatus(node,JCRSessionWrapper,lang,uuid)}</example>
+    </function>
+</taglib>

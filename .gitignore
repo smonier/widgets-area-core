@@ -1,0 +1,11 @@
+/.classpath
+/.project
+/.settings
+.idea
+*.iml
+*.ipr
+target
+.DS_Store
+*.ffs_db
+
+src/main/import/repository.xml.generated

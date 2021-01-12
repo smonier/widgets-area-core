@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content xmlns:j="http://www.jahia.org/jahia/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0">
+   <modules jcr:primaryType="jnt:modules">
+      <widgets-area-core j:dependencies="bootstrap4-components bootstrap4-core default siteSettings"
+                         j:modulePriority="0"
+                         j:moduleType="module"
+                         j:title="widgets-area-core"
+                         jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                         jcr:primaryType="jnt:module">
+         <sources jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                  jcr:primaryType="jnt:moduleVersionFolder"
+                  j:staticMountPointProviderKey="module-widgets-area-core-2.0-SNAPSHOT">
+            <src jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                 jcr:primaryType="jnt:folder">
+               <main jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                     jcr:primaryType="jnt:folder">
+                  <resources jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                             jcr:primaryType="jnt:folder">
+                     <javascript jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                                 jcr:primaryType="jnt:javascriptFolder">
+                        <apps jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                              jcr:primaryType="jnt:folder">
+                           <widgets-area-core.js jcr:primaryType="jnt:javascriptFile"/>
+                        </apps>
+                     </javascript>
+                  </resources>
+               </main>
+            </src>
+         </sources>
+         <portlets jcr:primaryType="jnt:portletFolder"/>
+         <files jcr:primaryType="jnt:folder"/>
+         <contents jcr:primaryType="jnt:contentFolder"/>
+         <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
+            <files jcr:primaryType="jnt:folder"/>
+            <contents jcr:primaryType="jnt:contentFolder"/>
+            <site-settings-base j:view="siteSettings" jcr:primaryType="jnt:template">
+               <widgetsAdmin j:applyOn="jnt:virtualsite"
+                             j:view="settingsBootstrap3GoogleMaterialStyle"
+                             jcr:primaryType="jnt:contentTemplate">
+                  <pagecontent jcr:primaryType="jnt:contentList">
+                     <widgetsadmin jcr:primaryType="jnt:widgetsAdmin"/>
+                  </pagecontent>
+               </widgetsAdmin>
+            </site-settings-base>
+         </templates>
+      </widgets-area-core>
+   </modules>
+</content>
