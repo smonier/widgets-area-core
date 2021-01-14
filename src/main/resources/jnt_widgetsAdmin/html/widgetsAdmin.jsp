@@ -1,6 +1,6 @@
-<%@ page import="org.jahia.services.SpringContextSingleton"%>
-<%@ page import="org.jahia.services.templates.JahiaTemplateManagerService"%>
-<%@ page import="org.jahia.bin.SessionNamedDataStorage"%>
+<%@ page import="org.jahia.services.SpringContextSingleton" %>
+<%@ page import="org.jahia.services.templates.JahiaTemplateManagerService" %>
+<%@ page import="org.jahia.bin.SessionNamedDataStorage" %>
 <%@ taglib uri="http://www.jahia.org/tags/templateLib" prefix="template" %>
 <%@ taglib prefix="internal" uri="http://www.jahia.org/tags/internalLib" %>
 <%@ taglib prefix="utility" uri="http://www.jahia.org/tags/utilityLib" %>
@@ -26,7 +26,8 @@
 
 <template:addResources type="javascript" resources="jquery.min.js"/>
 <template:addResources type="javascript" resources="jquery-ui.min.js,jquery.blockUI.js,workInProgress.js"/>
-<template:addResources type="javascript" resources="datatables/jquery.dataTables.min.js,datatables/dataTables.bootstrap-ext.js,i18n/jquery.dataTables-${currentResource.locale}.js,datatables/dataTables.i18n-sorting-ext.js,settings/dataTables.initializer.js"/>
+<template:addResources type="javascript"
+                       resources="datatables/jquery.dataTables.min.js,datatables/dataTables.bootstrap-ext.js,i18n/jquery.dataTables-${currentResource.locale}.js,datatables/dataTables.i18n-sorting-ext.js,settings/dataTables.initializer.js"/>
 <template:addResources type="javascript" resources="bootbox.min.js"/>
 <template:addResources type="javascript" resources="underscore.min.js"/>
 <template:addResources type="javascript" resources="typeahead.min.js"/>
@@ -50,11 +51,13 @@
     };
 
     $(document).ready(function () {
-        var dtOptions = {"aoColumns": [ //accent sorting for col 1, disable search for col 2 and 3
-                { targets: 0, type: 'diacritics-neutralise' },
-                { "bSearchable": false },
-                { "bSearchable": false }
-            ]};
+        var dtOptions = {
+            "aoColumns": [ //accent sorting for col 1, disable search for col 2 and 3
+                {targets: 0, type: 'diacritics-neutralise'},
+                {"bSearchable": false},
+                {"bSearchable": false}
+            ]
+        };
         dataTablesSettings.init('tableWidgetsList', 25, null, null, null, dtOptions);
         attachDeleteListeners();
     });
@@ -72,7 +75,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <button type="button" class="btn btn-default btn-raised pull-right" id="addwidget">
-                    <fmt:message key="widgetarea.add.widget.button"/>
+            <fmt:message key="widgetarea.add.widget.button"/>
         </button>
     </div>
 
@@ -120,9 +123,9 @@
                                             action="<c:url value='${objects.path}'/>"
                                             method="post" id="widgetsAdmin-delete-${objects.name}">
                                         <input type="hidden" name="jcrRedirectTo"
-                                               value="<c:url value='/cms/editframe/default/${currentResource.locale}${renderContext.mainResource.path}'/>" />
-                                        <input type="hidden" name="jcrNewNodeOutputFormat" value="html" />
-                                        <input type="hidden" name="jcrMethodToCall" value="delete" />
+                                               value="<c:url value='/cms/editframe/default/${currentResource.locale}${renderContext.mainResource.path}'/>"/>
+                                        <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
+                                        <input type="hidden" name="jcrMethodToCall" value="delete"/>
                                     </form>
                                 </template:tokenizedForm>
                             </td>
@@ -137,9 +140,10 @@
 </div>
 
 <script>
-    $(document).ready(function() {
-        $('#addwidget').click(function() {
-            window.top.CE_API.create('${widgetsAvailable.UUID}','${widgetsAvailable.path}','${site.name}','${widgetsAvailable.language}','${widgetsAvailable.language}',['jmix:widget'],[], true);
+    $(document).ready(function () {
+        $('#addwidget').click(function () {
+            window.top.CE_API.create('${widgetsAvailable.UUID}', '${widgetsAvailable.path}', '${site.name}', '${widgetsAvailable.language}', '${widgetsAvailable.language}', ['jmix:widget'], [], true);
         })
     })
 </script>
+
