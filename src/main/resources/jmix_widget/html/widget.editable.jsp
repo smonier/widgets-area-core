@@ -47,7 +47,7 @@
         </div>
     </div>
     <div class="panel-body widget-content">
-        <template:include view="detail"/>
+        <template:include view="default"/>
     </div>
 
     <template:tokenizedForm>
@@ -63,14 +63,18 @@
 
 
     <!-- Modal Edit -->
-    <div class="modal fade" id="editWidget${currentNode.identifier}" role="dialog">
+    <div class="modal" id="editWidget${currentNode.identifier}" role="dialog">
         <div class="modal-dialog">
 
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title"><fmt:message key="widgetarea.edit"/>&nbsp${currentNode.displayableName}</h4>
+                    <div><h5 class="modal-title"><fmt:message
+                            key="widgetarea.edit"/>&nbsp${currentNode.displayableName}</h5></div>
+                    <div class="text-right">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
                 </div>
                 <div class="modal-body">
                     <template:include view="edit"/>
@@ -81,14 +85,24 @@
     </div>
 
     <!-- Modal Full -->
-    <div class="modal fade modal-fullscreen" id="fullWidget${currentNode.identifier}" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
+    <div class="modal w-100" id="fullWidget${currentNode.identifier}" role="dialog">
+        <div class="modal-dialog modal-lg"  style="max-width: 1024px;">
             <div class="modal-content text-center">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <div><h5 class="modal-title">${currentNode.displayableName}</h5></div>
+                    <div class="text-right">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                </div>
+                <!-- Modal content-->
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <template:include view="full"/>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 </div>
             </div>
 

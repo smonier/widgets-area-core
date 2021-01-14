@@ -20,9 +20,9 @@
     </function>
     <function>
         <description>Return Publication Status</description>
-        <name>getVisibilityStatus</name>
+        <name>getPublicationStatus</name>
         <function-class>org.jahia.modules.widget.taglibs.Functions</function-class>
-        <function-signature>int getVisibilityStatus(org.jahia.services.content.JCRNodeWrapper,org.jahia.services.content.JCRSessionWrapper,java.lang.String,java.lang.String)</function-signature>
-        <example>${functions:getVisibilityStatus(node,JCRSessionWrapper,lang,uuid)}</example>
+        <function-signature>java.util.List getPublicationStatus(org.jahia.services.render.Resource,java.util.Set)</function-signature>
+        <example>${functions:getPublicationStatus(node,JCRSessionWrapper,lang,uuid)}</example>
     </function>
 </taglib>
