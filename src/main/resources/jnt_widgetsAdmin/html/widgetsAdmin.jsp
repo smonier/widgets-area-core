@@ -31,7 +31,7 @@
 <template:addResources type="javascript" resources="widgetsadmin.js"/>
 
 <c:set var="site" value="${renderContext.mainResource.node.resolveSite}"/>
-<jcr:node var="widgetsAvailable" path="${renderContext.site.path}/availableWidgets"/>
+<jcr:node var="widgetsAvailable" path="${renderContext.site.path}/contents/availableWidgets"/>
 <fmt:message key="label.cancel" var="labelCancel"/>
 <fmt:message key="label.ok" var="labelOk"/>
 <fmt:message key="widgetarea.remove" var="labelDelete"/>
