@@ -36,6 +36,7 @@
 <fmt:message key="label.ok" var="labelOk"/>
 <fmt:message key="widgetarea.remove" var="labelDelete"/>
 <fmt:message key="widgetarea.modal.delete.text" var="modalDeleteAll"/>
+<fmt:message key="label.workInProgressTitle" var="i18nWaiting"/>
 
 <script>
     var jsVarMap = {
@@ -133,7 +134,7 @@
                                           method="post" id="widgetsAdmin-delete-${objects.name}">
                                         <input type="hidden" name="jcrRedirectTo"
                                                value="<c:url value='/cms/editframe/default/${currentResource.locale}${renderContext.mainResource.path}'/>"/>
-                                        <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
+                                        <input type="hidden" name="jcrNewNodeOutputFormat" value=""/>
                                         <input type="hidden" name="jcrMethodToCall" value="delete"/>
                                     </form>
                                 </template:tokenizedForm>

@@ -1,3 +1,20 @@
+
+function callWorkInProgress(){
+    if($.browser.msie == true){
+        $.blockUI({ css: {
+                border: 'none',
+                padding: '15px',
+                backgroundColor: '#000',
+                '-webkit-border-radius': '10px',
+                '-moz-border-radius': '10px',
+                opacity: .5,
+                color: '#fff'
+            }, message: jsVarMap.i18nWaiting });
+    } else {
+        workInProgress(jsVarMap.i18nWaiting);
+    }
+}
+
 function bbDeleteWidget(widgetUUID) {
     widgetUUID = JSON.parse('"' + widgetUUID + '"');
     bootbox.dialog({
