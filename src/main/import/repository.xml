@@ -30,12 +30,12 @@
          <portlets jcr:primaryType="jnt:portletFolder"/>
          <files jcr:primaryType="jnt:folder"/>
          <contents jcr:primaryType="jnt:contentFolder">
-            <availablewidgets jcr:primaryType="jnt:contentList">
+            <availableWidgets jcr:primaryType="jnt:contentList">
                <j:translation_en jcr:language="en"
                                  jcr:mixinTypes="mix:title"
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="availableWidgets"/>
-            </availablewidgets>
+            </availableWidgets>
          </contents>
          <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
             <files jcr:primaryType="jnt:folder"/>
