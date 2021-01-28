@@ -19,6 +19,7 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
+<template:addResources type="javascript" resources="widgetArea.js"/>
 
 <div class="panel panel-grey margin-bottom-10">
 

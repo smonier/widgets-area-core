@@ -20,21 +20,18 @@
 <%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
-<template:addResources type="javascript" resources="jquery.min.js"/>
-<c:set var="site" value="${renderContext.mainResource.node.resolveSite}"/>
-<jcr:node var="widgetsAvailable" path="${renderContext.site.path}/availableWidgets"/>
 <template:addResources type="css" resources="datatables/css/bootstrap-theme.css"/>
 <template:addResources type="css" resources="typeahead.css"/>
-
 <template:addResources type="javascript" resources="jquery.min.js"/>
-<template:addResources type="javascript" resources="jquery-ui.min.js,jquery.blockUI.js,workInProgress.js"/>
-<template:addResources type="javascript"
-                       resources="datatables/jquery.dataTables.min.js,datatables/dataTables.bootstrap-ext.js,i18n/jquery.dataTables-${currentResource.locale}.js,datatables/dataTables.i18n-sorting-ext.js,settings/dataTables.initializer.js"/>
+<template:addResources type="javascript" resources="jquery-ui.min.js,jquery.blockUI.js"/>
+<template:addResources type="javascript" resources="datatables/jquery.dataTables.min.js,datatables/dataTables.bootstrap-ext.js,i18n/jquery.dataTables-${currentResource.locale}.js,datatables/dataTables.i18n-sorting-ext.js,settings/dataTables.initializer.js"/>
 <template:addResources type="javascript" resources="bootbox.min.js"/>
 <template:addResources type="javascript" resources="underscore.min.js"/>
 <template:addResources type="javascript" resources="typeahead.min.js"/>
 <template:addResources type="javascript" resources="widgetsadmin.js"/>
 
+<c:set var="site" value="${renderContext.mainResource.node.resolveSite}"/>
+<jcr:node var="widgetsAvailable" path="${renderContext.site.path}/availableWidgets"/>
 <fmt:message key="label.cancel" var="labelCancel"/>
 <fmt:message key="label.ok" var="labelOk"/>
 <fmt:message key="widgetarea.remove" var="labelDelete"/>
@@ -60,6 +57,7 @@
                 {"bSearchable": false}
             ]
         };
+        attachDeleteListeners();
         dataTablesSettings.init('tableWidgetsList', 25, null, null, null, dtOptions);
         attachDeleteListeners();
     });
@@ -90,12 +88,16 @@
                         <th>
                             <fmt:message key="widgetarea.widgetName"/>
                         </th>
-                        <th width="35%">
+                        <th width="20%">
                             <fmt:message key="widgetarea.widgetType"/>
                         </th>
-                        <th width="25%">
+                        <th width="20%">
+                            <fmt:message key="label.status"/>
+                        </th>
+                        <th width="15%">
                             <fmt:message key="label.actions"/>
                         </th>
+
                     </tr>
                     </thead>
                     <tbody>
@@ -108,22 +110,27 @@
                                     ${objects.primaryNodeTypeName}
                             </td>
                             <td>
-
+                                <button type="button" class="btn"
+                                        onclick="window.top.CE_API.edit('${objects.UUID}','${site.name}','${widgetsAvailable.language}','${widgetsAvailable.language}')">
+                                        ${widget:getPubStatus(objects,widgetsAvailable.language)}
+                                </button>
+                            </td>
+                            <td>
                                 <button type="button" class="btn btn-fab btn-fab-xs btn-default editWidgetButton"
                                         data-title="<fmt:message key='widgetarea.edit'/>"
                                         onclick="window.top.CE_API.edit('${objects.UUID}','${site.name}','${widgetsAvailable.language}','${widgetsAvailable.language}')">
                                     <i class="material-icons">edit</i>
                                 </button>
                                 <button type="button" class="btn btn-fab btn-fab-xs btn-danger deleteWidgetButton"
-                                        data-toggle="tooltip" data-container="body" data-sel-role="deleteWidget"
+                                        data-toggle="tooltip" data-container="body"
+                                        data-sel-role="delete_Widget"
                                         data-title="<fmt:message key='widgetarea.delete'/>"
                                         id="delete_${objects.name}">
                                     <i class="material-icons">delete</i>
                                 </button>
                                 <template:tokenizedForm>
-                                    <form
-                                            action="<c:url value='${objects.path}'/>"
-                                            method="post" id="widgetsAdmin-delete-${objects.name}">
+                                    <form action="<c:url value='${objects.path}'/>"
+                                          method="post" id="widgetsAdmin-delete-${objects.name}">
                                         <input type="hidden" name="jcrRedirectTo"
                                                value="<c:url value='/cms/editframe/default/${currentResource.locale}${renderContext.mainResource.path}'/>"/>
                                         <input type="hidden" name="jcrNewNodeOutputFormat" value="html"/>
@@ -148,4 +155,3 @@
         })
     })
 </script>
-

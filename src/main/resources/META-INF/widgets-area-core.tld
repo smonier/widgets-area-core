@@ -19,10 +19,17 @@
         <example>${functions:hasNoDefaultScriptView(node,"basic",renderContext)}</example>
     </function>
     <function>
-        <description>Return Publication Status</description>
-        <name>getPublicationStatus</name>
+        <description>Return Publication Info</description>
+        <name>getPubStatus</name>
         <function-class>org.jahia.modules.widget.taglibs.Functions</function-class>
-        <function-signature>java.util.List getPublicationStatus(org.jahia.services.render.Resource,java.util.Set)</function-signature>
-        <example>${functions:getPublicationStatus(node,JCRSessionWrapper,lang,uuid)}</example>
+        <function-signature>java.lang.String getPubStatus(org.jahia.services.content.JCRNodeWrapper,java.lang.String)</function-signature>
+        <example>${functions:getPubStatus(org.jahia.services.content.JCRNodeWrapper,java.lang.String)}</example>
+    </function>
+    <function>
+        <description>Return Random String</description>
+        <name>randomString</name>
+        <function-class>org.jahia.modules.widget.taglibs.Functions</function-class>
+        <function-signature>java.lang.String randomString(int)</function-signature>
+        <example>${functions:randomString(int)}</example>
     </function>
 </taglib>
