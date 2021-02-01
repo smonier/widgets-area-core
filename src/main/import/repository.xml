@@ -16,7 +16,7 @@
                      jcr:primaryType="jnt:folder">
                   <resources jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
                              jcr:primaryType="jnt:folder">
-                     <javascript jcr:mixinTypes="jmix:hasExternalProviderExtension"
+                     <javascript jcr:mixinTypes="jmix:hasExternalProviderExtension jmix:sourceControl"
                                  jcr:primaryType="jnt:javascriptFolder">
                         <apps jcr:mixinTypes="jmix:hasExternalProviderExtension"
                               jcr:primaryType="jnt:folder">

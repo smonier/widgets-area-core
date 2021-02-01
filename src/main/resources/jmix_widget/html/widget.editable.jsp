@@ -47,7 +47,7 @@
 
         </div>
     </div>
-    <div class="panel-body widget-content">
+    <div class="panel-body ui-widget-content">
         <template:include view="default"/>
     </div>
 

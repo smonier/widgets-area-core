@@ -18,7 +18,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="jquery-ui.min.css"/>
-<template:addResources type="javascript" resources="jquery.js"/>
+<template:addResources type="javascript" resources="jquery.min.js"/>
 <template:addResources type="javascript" resources="jquery-ui.js"/>
 <template:addResources type="javascript" resources="widgetArea.js"/>
 
